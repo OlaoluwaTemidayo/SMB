@@ -1,0 +1,80 @@
+<html>
+<head>
+    <base href="." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Luxliary</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="product_style.css">
+</head>
+<body>
+    <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="sale-badge">Discount Sale!</div>
+            <img src="assets/12d7ef1c-a144-41ec-b5c6-85f0b7bc6a62.jpeg" alt="Luxury Comfort Slippers" class="product-image"/>
+            <h2 class="product-name">Luxury Comfort Slippers</h2>
+            <p class="product-price">₦14,500</p>
+            <p class="product-description">Elegant comfort: Premium loafers with cushioned insoles for all-day wear.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        
+    
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="assets/ofe.jpeg" alt="Luxury Comfort Slippers" class="product-image"/>
+            <h2 class="product-name">Designer Mules</h2>
+            <p class="product-price">₦20,000</p>
+            <p class="product-description">Sophisticated stride: Designer mules crafted for style and support.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="assets/Step up your fashion with quality Footwear.jpeg" alt="Luxury Comfort Slippers" class="product-image"/>
+            <h2 class="product-name">Elegant Loafers</h2>
+            <p class="product-price">₦12,000</p>
+            <p class="product-description">Indulgent slides: Luxurious design with plush comfort for any occasion.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="sale-badge">Limited!</div>
+            <img src="assets/Female Slippers.jpeg" alt="Luxury Comfort Slippers" class="product-image"/>
+            <h2 class="product-name">Sophisticated Slides</h2>
+            <p class="product-price">₦15,000</p>
+            <p class="product-description">Timeless loafers: Premium leather and modern silhouette for effortless style.</p>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const productCard = this.parentElement;
+                
+                // Check if product name and image exist
+                const productNameElement = productCard.querySelector('.product-name');
+                const productImageElement = productCard.querySelector('.product-image');
+                
+                if (productNameElement && productImageElement) {
+                    const productName = productNameElement.innerText;
+                    const productImage = productImageElement.src;
+    
+                    const whatsappMessage = `Hi, I am interested in buying the ${productName}. Can you please provide more details?`;
+                    const whatsappLink = `https://wa.me/+2349032033313?text=${encodeURIComponent(whatsappMessage)}`;
+    
+                    // Open WhatsApp in a new tab
+                    window.open(whatsappLink, '_blank');
+                } else {
+                    console.error('Product name or image is missing.');
+                    alert('Unable to retrieve product details. Please try again.');
+                }
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
